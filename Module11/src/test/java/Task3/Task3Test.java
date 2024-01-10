@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
@@ -40,7 +38,7 @@ public class Task3Test {
         List<ProductItem> productItems = productPage.getListItems();
 
         final Random random = new Random();
-        final int count = random.nextInt(1, productItems.size());
+        final int count = random.nextInt(productItems.size());
         for(int i = 0; i < count; i++) {
             productItems.get(i).getAddButton().click();
         }

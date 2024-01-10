@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductPage {
     @FindBy(how = How.CSS, using = ".title")
@@ -31,6 +32,6 @@ public class ProductPage {
         return itemsList.findElements(By.cssSelector(".inventory_item"))
                 .stream()
                 .map(ProductItem::new)
-                .toList();
+                .collect(Collectors.toList());
     }
 }
